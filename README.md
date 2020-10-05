@@ -1,2 +1,2 @@
-# Simple-Planner_App
-This is a simple To-do app built with React using hooks
+# Recipe-App-React
+This is a simple Recipe app built with React using hooks
