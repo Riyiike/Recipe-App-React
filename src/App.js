@@ -10,9 +10,10 @@ const App = () => {
 
   useEffect(() => {
     getRecipes();
-  }, []);
+  }, [search]);
 
   const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState("");
 
   const getRecipes = async () => {
     const response = await fetch(
@@ -22,10 +23,19 @@ const App = () => {
     console.log(data.hits);
     setRecipes(data.hits);
   };
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
   return (
     <div className="App">
       <form className="search-form">
-        <input className="search-bar" type="text" />
+        <input
+          className="search-bar"
+          type="text"
+          value="search"
+          onChange={handleChange}
+        />
         <button classNmae="search-button" type="submit">
           Search
         </button>
